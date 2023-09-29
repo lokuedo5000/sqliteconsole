@@ -91,6 +91,7 @@ class CustomConsole {
       "customSelect": "SELECT custom_column FROM custom_table WHERE custom_condition;",
       "selectColumn2": "SELECT column1, column2 FROM table_name WHERE condition1;",
       "getAllNamesTable": "SELECT name FROM sqlite_master WHERE type='table';",
+      "columns": "SELECT name FROM pragma_table_info('name_table')"
     };
     
     // Agrega alias para las nuevas muestras SQL
@@ -108,7 +109,8 @@ class CustomConsole {
       "alter": "alterTable",
       "rename": "renameTable",
       "allnames": "getAllNamesTable",
-      
+      "allcolumns": "columns",
+      "column": "columns",
     };
 
     let sampleQuery = false;
