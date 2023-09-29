@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqlite-Console - Beta</title>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="/lib/icomoon/icomoon.css">
+
+    <!-- Roboto -->
+    <link rel="stylesheet" href="/lib/roboto/roboto.css">
+
+    <!-- Materializecss -->
+    <link rel="stylesheet" href="/lib/materialize/css/materialize.min.css">
+
+    <!-- Owl -->
+    <link rel="stylesheet" href="/lib/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/lib/owl/assets/owl.theme.default.min.css">
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="/lib/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="/lib/codemirror/addon/hint/show-hint.css">
+    <!-- themes -->
+    <link rel="stylesheet" href="/lib/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/3024-day.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/3024-night.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/abbott.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/abcdef.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/ayu-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/ayu-mirage.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/base16-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/bespin.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/base16-light.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/colorforth.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/dracula.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/duotone-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/duotone-light.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/elegant.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/erlang-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/hopscotch.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/icecoder.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/isotope.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/juejin.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/lesser-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/liquibyte.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/lucario.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/material.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/material-darker.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/material-palenight.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/material-ocean.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/mdn-like.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/moxer.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/neat.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/neo.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/night.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/nord.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/oceanic-next.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/panda-syntax.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/paraiso-light.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/railscasts.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/rubyblue.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/seti.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/shadowfox.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/solarized.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/the-matrix.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/twilight.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/xq-light.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/yeti.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/idea.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/darcula.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/yonce.css">
+    <link rel="stylesheet" href="/lib/codemirror/theme/zenburn.css">
+
+    <!-- console -->
+    <link rel="stylesheet" href="/css/console.css">
+</head>
+
+<body>
+    <div class="menu-sqlite">
+        <div class="action-sqlite">
+            <div class="btn-action icon-file-empty modal-trigger tooltipped" data-position="right"
+                data-tooltip="Crear base de datos" href="#newdb"></div>
+            <div class="btn-action icon-library_add open-db-action tooltipped" data-position="right"
+                data-tooltip="Agregar base de datos"></div>
+            <div class="btn-action icon-remove_circle_outline tooltipped close-db" data-position="right"
+                data-tooltip="Remover"></div>
+            <div class="btn-action icon-info_outline tooltipped open-console" data-position="right" data-tooltip="Console">
+            </div>
+            <div class="btn-action icon-play1 run-code tooltipped" data-position="right" data-tooltip="Ejecutar código">
+            </div>
+        </div>
+        <div class="list-db" id="list-db">
+            <!-- <label>
+                <span class="icon-database2"></span>
+                <div class="db-text">Articles</div>
+                <input name="group1" type="radio" />
+                <span class="radios-input"></span>
+            </label> -->
+        </div>
+    </div>
+    <div class="console-body">
+        <textarea id="sql-editor" spellcheck="false" class="full-height-editor"></textarea>
+    </div>
+
+    <div class="console-result">
+        <textarea id="text-editor"></textarea>
+    </div>
+
+    <!-- nueva base de datos -->
+    <div id="newdb" class="modal">
+        <div class="modal-content">
+            <h4>Nueva base de datos</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="col s6">
+                            <label>Nombre</label>
+                            <input placeholder="Nombre" name="name_db" type="text" class="validate">
+                        </div>
+                        <div class="col s6">
+                            <label>Extension</label>
+                            <select class="browser-default" name="extension_db">
+                                <option value="" disabled>Extension</option>
+                                <option value=".db" selected>db</option>
+                                <option value=".sqlite">sqlite</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" name="password_db" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div> -->
+
+
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="waves-effect waves-green btn-flat create-db">Crear</a>
+        </div>
+    </div>
+
+    <!-- abrir base de datos -->
+    <div id="opendb" class="modal">
+        <div class="modal-content">
+            <h4>Nueva base de datos</h4>
+            <div class="row m0">
+                <form class="col s12">
+
+                    <div class="row m0">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" name="password_db" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="waves-effect waves-green btn-flat open-db">Crear</a>
+        </div>
+    </div>
+
+
+    <!-- jquery -->
+    <script src="/lib/jQuery/jquery.min.js"></script>
+    <!-- materialize -->
+    <script src="/lib/materialize/js/materialize.min.js"></script>
+    <script src="/lib/materialize/js/init.js"></script>
+
+    <!-- codemirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/sql-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/show-hint.min.js"></script>
+
+    <!-- Util code -->
+    <script src="/js/code.util.kit.js"></script>
+
+    <!-- main -->
+    <script src="/js/memoria.js"></script>
+
+
+    <script src="/js/sqlite.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

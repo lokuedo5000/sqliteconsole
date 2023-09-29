@@ -1,0 +1,27 @@
+{
+    "name": "sqliteconsole",
+    "title": "SqliteConsole",
+    "version": "1.0.0",
+    "icono": "/icon.svg",
+    "server": {
+      "homepage": "/",
+      "port": 3090,
+      "host": "http://localhost",
+      "pathviews": "app/views",
+      "pathpublic": "app/public"
+    },
+    "description": "Descarga tus juegos gratis.",
+    "tags": "Base de Datos, SQL, SQLite, Autocompletado SQL",
+    "main": "sqliteconsole.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lokuedo5000/sfree.git"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "@SFree",
+    "license": "ISC"
+  }
+  
