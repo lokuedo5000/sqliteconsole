@@ -96,17 +96,30 @@ class DatabaseManager {
     async executeQuery(databaseName, query) {
         return new Promise((resolve, reject) => {
             const db = this.databases[databaseName];
-
+    
             if (db) {
                 const database = db.db;
-
+    
                 // Verificar si es una consulta SELECT
                 if (query.trim().toUpperCase().startsWith("SELECT")) {
                     database.all(query, [], function (err, rows) {
                         if (err) {
                             reject({ result: err.message });
                         } else {
-                            resolve({ result: `Successful\n${JSON.stringify(rows, null, 2)}` });
+                            // Modificar los resultados para reemplazar BLOB o buffers y acortar los valores TEXT
+                            const modifiedRows = rows.map((row) => {
+                                for (const key in row) {
+                                    if (Buffer.isBuffer(row[key])) {
+                                        row[key] = "[BLOB Data]";
+                                    } else if (typeof row[key] === "string" && row[key].length > 300) {
+                                        // Acortar valores TEXT si tienen más de 300 caracteres
+                                        row[key] = row[key].substring(0, 300) + "..."; // Puedes ajustar el número de caracteres según tus necesidades
+                                    }
+                                }
+                                return row;
+                            });
+    
+                            resolve({ result: `Successful\n${JSON.stringify(modifiedRows, null, 2)}` });
                         }
                     });
                 } else {
