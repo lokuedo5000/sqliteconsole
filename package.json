@@ -15,13 +15,13 @@
     "main": "sqliteconsole.js",
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/lokuedo5000/sfree.git"
+      "url": "git+https://github.com/lokuedo5000/sqliteconsole.git"
     },
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "@SFree",
+    "author": "Lwte",
     "license": "ISC"
   }
   
