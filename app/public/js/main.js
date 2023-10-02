@@ -130,11 +130,18 @@ kit.onDOMReady(async () => {
 
 
     kit.onClick("run-code", async () => {
+        const editor = sqliteConsole.editors["sql-editor"];
+        const textEditor = editor.getValue();
+        if (textEditor.trim() == "clear") {
+            await sqliteConsole.sendCode("sql-editor");
+            return;
+        }
         if (memory.all.active) {
             const res = await sqliteConsole.sendCode("sql-editor");
             sqliteConsole.setLine(3, "text-editor", null, true);
             sqliteConsole.setLine(4, "text-editor", res);
-        }else{
+            sqliteConsole.setValue("sql-editor", "");
+        } else {
             M.toast({ html: 'Primero seleccione una base de datos' })
         }
 
@@ -166,7 +173,7 @@ kit.onDOMReady(async () => {
                     sqliteConsole.setLine(2, "text-editor", "connected: " + kit.dirname(get[0].file));
                 }
             }
-        }else{
+        } else {
             M.toast({ html: 'Primero seleccione una base de datos' })
         }
 

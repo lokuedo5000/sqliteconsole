@@ -93,7 +93,7 @@ class CustomConsole {
       "getAllNamesTable": "SELECT name FROM sqlite_master WHERE type='table';",
       "columns": "SELECT name FROM pragma_table_info('name_table')"
     };
-    
+
     // Agrega alias para las nuevas muestras SQL
     const alias = {
       "tb": "createTable",
@@ -144,7 +144,7 @@ class CustomConsole {
       editor.setValue(linesToKeep);
       return;
     }
-    
+
     editor.replaceRange("", { line: lineNumber - 1, ch: 0 }, { line: lineNumber, ch: 0 });
 
     const totalLines = editor.lineCount();
@@ -158,7 +158,7 @@ class CustomConsole {
 
   veryJson(datos) {
     try {
-     
+
       const jsonstringify = JSON.stringify(datos, null, 2);
       const jsonparse = JSON.parse(jsonstringify);
 
@@ -169,7 +169,7 @@ class CustomConsole {
     } catch (error) {
       datos = datos;
     }
-  
+
     // Si no es JSON válido o hubo un error, devuelve la cadena original
     return datos;
   }
@@ -187,7 +187,7 @@ class CustomConsole {
     });
 
     const editor = this.editors["sql-editor"];
-    
+
 
   }
 
@@ -292,6 +292,17 @@ class CustomConsole {
   async sendCode(textareaElementId) {
     const editor = this.editors[textareaElementId];
     const textEditor = editor.getValue();
+
+    if (textEditor.trim() == "clear") {
+      let get = this._search(memory.all.list, "id", memory.all.active);
+      if (get.length > 0) {
+        this.setValue("sql-editor", "");
+        this.setValue("text-editor", "")
+        this.setLine(1, "text-editor", get[0].file);
+        this.setLine(2, "text-editor", "connected: " + kit.dirname(get[0].file));
+      }
+      return;
+    }
     const send = await this._ajax("/run-db", "POST", { codigo: textEditor, id: memory.all.active });
     return send.result;
   }
